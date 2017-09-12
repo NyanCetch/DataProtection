@@ -1,21 +1,24 @@
 ﻿using System;
- using System.Collections.Generic;
- using System.Linq;
- 
- namespace Lab2
+
+namespace Lab2
  {
      internal class Program
      {
          public static void Main(string[] args)
          {
              Console.Write("Введите текст: ");
-             string text = Console.ReadLine();
+             string text = Console.ReadLine().ToLower();
              
              Console.Write("Придумайте ключ: ");
-             string key = Console.ReadLine();
+             string key = Console.ReadLine().ToLower();
+             
+             Console.Write("Укажите сдвиг: ");
+             int keyShift = Int32.Parse(Console.ReadLine());
              
              VigenereCipher.ShowTable();
-             Console.WriteLine("Шифр: " + VigenereCipher.GetEncryptedText(text, key, 3));
+             Console.WriteLine("Шифр: " + VigenereCipher.GetEncryptedText(text, key, keyShift));
+             
+             Console.Write("Для продолжения нажмите любую кнопку...");
              Console.ReadKey();
          }
      }
